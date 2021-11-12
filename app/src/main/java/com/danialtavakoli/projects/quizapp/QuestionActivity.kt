@@ -56,6 +56,10 @@ class QuestionActivity : AppCompatActivity() {
             else
                 textViewName.setTextColor(Color.parseColor("#d50000"))
         }
+        binding.textViewOptionOne.isEnabled = true
+        binding.textViewOptionTwo.isEnabled = true
+        binding.textViewOptionThree.isEnabled = true
+        binding.textViewOptionFour.isEnabled = true
     }
 
     private fun setDefaultForOption() {
@@ -90,6 +94,10 @@ class QuestionActivity : AppCompatActivity() {
     }
 
     fun submitAnswer(view: View) {
+        binding.textViewOptionOne.isEnabled = false
+        binding.textViewOptionTwo.isEnabled = false
+        binding.textViewOptionThree.isEnabled = false
+        binding.textViewOptionFour.isEnabled = false
         if (selectedOption == 0)
             binding.button.text = "جوابمو انتخاب کردم!"
         if (selectedOption == 0 && currentQuestion < questionList.size - 1) {
